@@ -1,14 +1,25 @@
 class CommentsController < ApplicationController
-
   def new
+    @comment = Comment.new
   end
 
   def create
+    @commentable = @commentable.comments.new(comment_params)
+    if @commentable.save
+      redirect_to :back, notice: 'Your comments are posted'
+    else
+      redirect_to :back, notice: 'Your comments could not posted'
+    end
   end
 
   private
 
-  def find_commentable
+  def comment_params
+    params.require(:comment).permit(:body)
   end
 
+  def find_commentable
+    @commentable = Comment.find_by_id(params[:id]) if params[:comment_id]
+    @commentable = Comment.find_by_id(params[:id]) if params[:story_id]
+  end
 end
