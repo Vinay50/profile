@@ -1,5 +1,14 @@
 <div class ="container">
   <%= @story.title %>
 	<%= @story.content %>
+	<h3>Comments</h3>
+
+  <%= form_for [@story, Comment.new] do |f| %>
+  	<%= f.text_area :body, :placeholder => "Add Comment" %>
+  <%= f.submit "Submit" %>
+  <% end %>
+	<ul>
+			<%= render(partial: 'comments/comment', collection: @story.comments) %>
+	</ul>
 </div>
 

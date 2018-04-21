@@ -1,6 +1,6 @@
 <div class="container">
 <% @stories.each do |story|%>
-<%= story.title %></br>
+<%= link_to(story.title, story_path(story)) %></br>
 <%= story.content %>
 <% end %>
 </div>
