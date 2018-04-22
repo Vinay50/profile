@@ -1,19 +1,18 @@
-<header class="navbar  navbar-inverse">
-  <div class="navbar-class">
-    <div class="container">
-    <!-- Collect the nav links, forms, and other content for toggling -->
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">HOME</a></li>
-        <li><%=link_to "ABOUT", "about_us_path"%></li>
-        <li><%=link_to "OUR SERVICES", "our_services_path" %></li>
-        <li><%=link_to "RATES", "" %></li>
-        <li><%=link_to'CAREERS', "careers_path"%></li>
-        <li><a href="#">TRAINING</a></li>
-        <li><%= link_to"GALLERY", "gallery_path" %></li>
-        <li><%=link_to"MEDIA", "media_path"%></li>
-        <li><%=link_to"Sign in", "faq_path" %></li>
-        <li><a href="#">Sign up</a></li>
-      </ul>
+<nav class="navbar navbar-inverse custom_navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
     </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Theme</a></li>
+      <li><a href="#">Jobs</a></li>
+      <li><a href="#">Documentation</a></li>
+      <li><a href="#">Expo</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
   </div>
-  </header>
+</nav>
