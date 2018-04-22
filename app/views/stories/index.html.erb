@@ -1,6 +1,13 @@
 <div class="container">
-<% @stories.each do |story|%>
-<%= link_to(story.title, story_path(story)) %></br>
-<%= story.content %>
-<% end %>
+  <div class="row">
+    <div class="col-lg-9">
+      <% @stories.each do |story|%>
+        <%= link_to(story.title, story_path(story)) %></br>
+        <%= story.content %>
+      <% end %>
+    </div>
+    <div class="col-lg-3">
+      Categoies
+    </div>
+  </div>
 </div>
