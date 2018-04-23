@@ -1,14 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-9">
-		  <%= @story.title %>
+    <div class="col-lg-9 col-md-offset-1">
+		  <h2><%= @story.title %></h2><br>
 			<%= @story.content %>
 			<h3>Comments</h3>
-
 		  <%= form_for [@story, Comment.new] do |f| %>
-		  	<%= f.text_area :body, :class => "form-control", :placeholder => "Add Comment" %>
-		  <%= f.submit "Submit" %>
-		  <% end %>
+		  	<%= f.text_area :body, :class => "form-control", :placeholder => "Add Comment" %><br>
+		  <%= f.submit "Comment", class: 'btn btn-primary pull-right' %>
+		  <% end %><br>
 			<ul>
 				<%= render(partial: 'comments/comment', collection: @story.comments) %>
 			</ul>

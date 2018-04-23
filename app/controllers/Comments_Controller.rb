@@ -8,9 +8,9 @@ class CommentsController < ApplicationController
   def create
     @commentable = @commentable.comments.new(comment_params)
     if @commentable.save
-      redirect_to :back, notice: 'Your comments are posted'
+      redirect_to :back, notice: 'Your comments are posted.'
     else
-      redirect_to :back, notice: 'Your comments could not posted'
+      redirect_to :back, notice: 'Your comments could not posted.'
     end
   end
 
