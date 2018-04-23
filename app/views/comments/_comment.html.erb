@@ -3,10 +3,10 @@
   <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
   <%= form_for [comment, Comment.new] do |f| %>
     <div class ="form-group">
-      <%= f.text_area :body, :class => "form-control", placeholder: "Add a Reply" %><br/>
+      <%= f.text_area :body, :class => "form-control", placeholder: "Add a Reply"%>
     </div>
-    <%= f.submit "Reply", class: 'btn btn-info pull-right'  %>
-    <% end %>
+    <%= f.submit "Reply", class: 'btn btn-info pull-right' %>
+    <% end %><br><br>
   <ul>
     <%= render partial: 'comments/comment', collection: comment.comments %>
   </ul>

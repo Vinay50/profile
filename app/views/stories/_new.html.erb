@@ -1,9 +1,12 @@
 <%= form_for(Story.new) do |f|%>
   <div class ="form-group">
-    <%= f.text_field :title, :class => "form-control", :placehoder => "Add Title" %>
+    <%= f.text_field :title, :class => "form-control", :placeholder => "Add Title" %>
   </div>
   <div class ="form-group">
     <%= f.text_area :content, :class => "form-control", :placeholder => "Add Content" %>
   </div>
-  <%= f.submit "Submit", class: 'btn btn-Primary' %>
+   <div class ="form-group">
+    <%= f.text_field :all_tags, :class => "form-control", :placeholder => "Add Tag(s)" %>
+  </div>
+  <%= f.submit "Submit", class: 'btn btn-primary pull-right' %>
 <% end %>

@@ -1,6 +1,7 @@
 class StoriesController < ApplicationController
   def index
-    @stories = Story.all
+    #@stories = Story.all
+    @stories = Story.paginate(:page => params[:page])
   end
 
   def show
@@ -13,11 +14,11 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
-    if @story.save
+    if @story.save!
       redirect_to @story
       flash[:success] = 'Stoy added successfully.'
     else
-      redirect_to :new
+      redirect_to new
       flash[:error] = 'Could not add Story. Please try later.'
     end
   end
@@ -25,6 +26,6 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :content)
+    params.require(:story).permit(:title, :content, :all_tags)
   end
 end

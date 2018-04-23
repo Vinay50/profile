@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'less-rails' # Sprockets (what Rails 3.1 uses for its asset pipeline)
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
+gem 'devise'
+gem 'will_paginate', '~> 3.1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :development, :test do
