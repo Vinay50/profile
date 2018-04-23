@@ -14,12 +14,12 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
-    if @story.save!
-      redirect_to @story
+    if @story.save
       flash[:success] = 'Stoy added successfully.'
+      redirect_to @story
     else
-      redirect_to new
       flash[:error] = 'Could not add Story. Please try later.'
+      redirect_to @story
     end
   end
 

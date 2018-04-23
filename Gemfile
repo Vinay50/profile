@@ -36,6 +36,7 @@ gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'will_paginate', '~> 3.1.0'
+gem 'client_side_validations'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :development, :test do

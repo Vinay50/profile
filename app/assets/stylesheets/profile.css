@@ -13,4 +13,9 @@
   background-color: #563d7c !important;
   font-weight: 500;
 }
+.field_with_errors {
+  padding: 2px;
+  color: red;
+}
+
 
