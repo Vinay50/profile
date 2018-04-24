@@ -1,5 +1,5 @@
 class Story < ApplicationRecord
-  validates :title, :content, :tags, presence: true
+  validates :title, :content, :all_tags, presence: true
   has_many :comments, as: :commentable
   has_many :taggings
   has_many :tags, through: :taggings
