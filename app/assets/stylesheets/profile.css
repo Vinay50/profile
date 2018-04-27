@@ -4,8 +4,12 @@
   border-color: #080808;
   font-size: 16px;
 }
-.navbar-inverse .navbar-nav > li > a {
-    color: #cbbde2;
+.navbar-default .navbar-text {
+  color: blue !important;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #337ab7 !important;
+  font-size: 17px;
 }
 .navbar-nav > .active > a, .custom_navbar .navbar-nav > .active > a:hover,
 .custom_navbar .navbar-nav > .active > a:focus {
@@ -13,17 +17,22 @@
   background-color: #563d7c !important;
   font-weight: 500;
 }
+
 .field_with_errors {
   padding: 2px;
   color: red;
 }
 
 .bd-footer {
-  padding: 2rem 0;
+  padding: 1rem 0;
   margin-top: 2rem;
   font-size: 85%;
   text-align: center;
-  background-color: #f7f7f7;
+  background-color: #EFEFEE;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+
 }
 .text-muted {
   color: #636c72!important;
