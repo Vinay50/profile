@@ -1,0 +1,43 @@
+<!-- Sign up Modal -->
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="myModalLabel">Sign up</h4>
+        <div class="text-center">
+          Already a member?
+          <a href="" data-toggle="modal" data-target="#signin" class="text-center">Sign in</a>
+      </div>
+      </div>
+
+      <div class="modal-body">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name),validate: true, :html => { :id => "sing_up",:'data-type' => 'json' }, :format => :json, :remote => true ) do |f| %>
+          <%= devise_error_messages! %>
+
+         <div class="form-group">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, class: 'form-control'%>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off", class: 'form-control'%>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'%>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit "Sign up", class: 'btn btn-primary form-control' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<!-- login Modal -->
+<div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title text-center" id="myModalLabel">Sign in</h3>
+        <div class="text-center">
+          New here?
+          <a href="" data-toggle="modal" data-target="#signup" class="text-center">Sign up</a>
+        </div>
+      </div>
+      <div class="modal-body">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:id => "login_form" }, :format => :json, :remote => true ) do |f| %>
+          <div class="messages text-center"></div>
+          <div class="success-messages text-center"></div>
+          <div class="form-group">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+          </div>
+
+           <div class="form-group">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+          </div>
+
+          <div class="col-lg-12 form-group">
+            <div class="col-lg-4 remember-me">
+              <% if devise_mapping.rememberable? -%>
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              <% end -%>
+            </div>
+            <div class="col-lg-4 pull-right">
+              <div class="form-group">
+                  <a href="/users/password/new">Forgot your password?</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit "SIGN IN", id: 'sign_in_button', class: 'btn btn-primary form-control' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

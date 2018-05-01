@@ -37,3 +37,16 @@
 .text-muted {
   color: #636c72!important;
 }
+.remember-me {
+  padding-left: 0px!important;
+}
+.messages{
+  color: red;
+  font-size:18px;
+  margin-bottom: 9px;
+}
+.success-messages{
+  color: green;
+  font-size:18px;
+  margin-bottom: 9px;
+}
