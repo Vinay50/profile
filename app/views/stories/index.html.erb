@@ -3,7 +3,7 @@
     <div class="col-lg-9">
       <% @stories.each do |story|%>
         <h3><%= link_to(story.title, story_path(story)) %></h3>
-        <%= story.content %>
+        <%= story.content.html_safe %>
       <% end %>
     </div>
     <%= will_paginate @stories %>
