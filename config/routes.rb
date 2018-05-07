@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'feeds/index'
+
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   root 'stories#index'
