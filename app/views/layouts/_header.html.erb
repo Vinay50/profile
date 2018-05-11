@@ -22,6 +22,9 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
+        <% if current_user.is_admin %>
+          <li><a href="/dashboard"><span class="glyphicon glyphicon-user"></span>Dashboard</a></li>
+        <% end %>
         <li><a href="/stories/new"><span class="glyphicon glyphicon-user"></span>New Story</a></li>
         <% if user_signed_in? %>
           <li class="dropdown">
