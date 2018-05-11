@@ -16,4 +16,5 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require rails.validations
+//= require ckeditor/init
 //= require_tree .

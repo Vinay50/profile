@@ -3,8 +3,13 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    flash[:success] = "logged in successfully."
-    return stories_path
+    if current_user && current_user.is_admin
+      flash[:success] = "logged in successfully"
+      return feeds_index_path
+    else
+      flash[:success] = "logged in successfully."
+      return stories_path
+    end
   end
 
   helper_method :resource_name, :resource, :devise_mapping

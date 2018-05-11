@@ -37,6 +37,9 @@ gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'will_paginate', '~> 3.1.0'
 gem 'client_side_validations'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :development, :test do
